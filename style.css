@@ -1,0 +1,729 @@
+/* フォントファイル読み込みのための記述 */
+/* @font-face {
+  font-family: "main-font";
+  src: url("./fonts/file-name.woff") format("woff");
+} */
+
+
+
+/*
+決まっている分だけでも事前に使用しておく
+ex) root:{}のメインカラーやbody{}のフォント指定など
+*/
+
+/*
+[注意事項]
+1) 同じクラス名・ID名を使用しないように気を付ける
+2) 基本的にタグ名をセレクタには使用しない
+  ただし、".top > img"みたいなタグ名の使用方法はOK
+*/
+
+
+:root{
+  --main-color:#fefefe;
+  --color-black:#212121;
+  --header-height:100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: var(--color-black);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display:flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+/* (1)ここから */
+.header{
+  z-index: 100;
+  display: flex;
+  width: 95%;
+  height: 80px;
+  background-color: #1b294c;
+  align-items: center;
+  border-radius: 60px;
+  position: fixed;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.title{
+  margin-right: auto;
+  margin-left: 3%;
+}
+
+.menu-group{
+  margin-right: 10px;
+}
+
+.menu-item{
+  list-style: none;
+  display: inline-block;
+  padding: 20px;
+  margin-top: 20px;
+  color: #FFFFFF;
+}
+/* (1)ここまで */
+
+.section{
+  scroll-margin-top: var(---header-height);
+}
+
+/* (2)ここから */
+.section.top {
+  scroll-margin-top: var(--header-height);
+  width: 100%;
+  height: 100vh;
+  background-color: #fffdea;
+  position: relative;
+}
+
+._top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+}
+
+.dog_star {
+  width: 200px;
+
+  position: absolute;
+  top: 45%;
+  left: 10%;
+}
+
+.orion_star {
+  position: absolute;
+  top: 40%;
+  left: 80%;
+}
+
+.star1 {
+  position: absolute;
+  top: 63%;
+  left: 83%;
+  width: 15px;
+}
+
+#particles-js{
+  position:absolute;/*描画固定*/
+  width: 110%;
+  height: 100%;
+}
+
+#wrapper{
+  position: absolute;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+  width:110%;
+  height: 100%;
+}
+
+.top_tape {
+  width: 470px;
+  height: auto;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top_logo {
+  width: 290px;
+  height: auto;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top_subtitle{
+  width: 500px;
+  height: auto;
+
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.album {
+  position: absolute;
+  top: 60%;
+	left: 50%;
+  transform: translateX(-50%);
+}
+
+.album img {
+	animation-name: album;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	opacity: 0;
+}
+
+.dog_1 {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  300px;       /* ※縦横を同値に */
+    height: 300px;       /* ※縦横を同値に */
+    display: block;
+    margin: 0 auto;
+    animation-delay:0s;
+    -webkit-animation-delay:0s;
+}
+
+.dog_2 {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  300px;       /* ※縦横を同値に */
+    height: 300px;       /* ※縦横を同値に */
+
+     position: absolute;
+     top: 0px;
+     animation-delay:2s;
+     -webkit-animation-delay:2s;
+}
+
+.dog_3 {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  300px;       /* ※縦横を同値に */
+    height: 300px;       /* ※縦横を同値に */
+
+    position: absolute;
+    top: 0px;
+    animation-delay:4s;
+    -webkit-animation-delay:4s;
+}
+
+.dog_4 {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  300px;       /* ※縦横を同値に */
+    height: 300px;       /* ※縦横を同値に */
+
+    position: absolute;
+     top: 0px;
+     animation-delay:6s;
+     -webkit-animation-delay:6s;
+}
+
+.dog_5 {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  300px;       /* ※縦横を同値に */
+    height: 300px;       /* ※縦横を同値に */
+
+    position: absolute;
+     top: 0px;
+     animation-delay:8s;
+     -webkit-animation-delay:8s;
+}
+
+@keyframes album {
+  0%{ opacity: 0;}
+  10%{ opacity: 1;}
+  20%{ opacity: 1;}
+  30%{ opacity: 0;}
+  100%{ opacity: 0;}
+}
+
+@-webkit-keyframes album {
+  0%{ opacity: 0;}
+  10%{ opacity: 1;}
+  20%{ opacity: 1;}
+  30%{ opacity: 0;}
+  100%{ opacity: 0;}
+}
+/* (2)ここまで */
+
+
+/* (3)ここから */
+.section.about {
+  scroll-margin-top: var(--header-height);
+  width: 100%;
+  height: 140vh;
+  background-color: #fffdea;
+}
+
+._about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.about_house {
+  z-index: 20;
+
+}
+
+.about_logo {
+  width: 290px;
+  height: auto;
+
+  position: absolute;
+  z-index: 30;
+  top: 53%;
+  left: 38%;
+  transform: translateX(-50%);
+}
+
+.about_logo {
+  animation: about_logo 3s infinite ease-in-out .8s alternate;
+  display: inline-block;
+  transition: 1.0s ease-in-out;
+}
+
+@keyframes about_logo {
+  0% {
+    transform:translate(0, 0) rotate(-3deg);
+  }
+  50% {
+    transform:translate(0, -3px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(3deg);
+  }
+}
+
+.about.text {
+  position:absolute;
+  top: 73%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  line-height: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about.text1 {
+  font-size: 22px;
+  color: #212121;
+}
+.about.text2 {
+  font-size: medium;
+  color: #212121;
+  border-top: dashed 5px #fefefe;
+  border-bottom:dashed 5px #fefefe;
+}
+
+.about.text3 {
+  font-size: medium;
+  color: #212121;
+}
+
+.about.text4 {
+  font-size: medium;
+  color: #212121;
+  border-top: dashed 5px #fefefe;
+  border-bottom:dashed 5px #fefefe;
+}
+
+.border-radius {
+  width: 1200px;
+  height: 200px;
+  line-height: 100px;
+  background-color: #f0e196;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 10;
+  top: 86%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.white1{
+  width: 150px;
+  position: absolute;
+  z-index: 50;
+  top: 93%;
+  left: 18%;
+}
+
+
+.white2{
+  width: 150px;
+  position: absolute;
+  z-index: 50;
+  top: 93%;
+  right: 18%;
+}
+
+/* (3)ここまで */
+
+
+/* (4)ここから */
+.section.feature {
+  scroll-margin-top: var(--header-height);
+  height: 408vh;
+  background-color: #fffdea;
+  background-image: url(./images/yellow_circles.svg);
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 50vh;
+}
+
+.feature_cloud2 {
+  width: 450px;
+  height: auto;
+}
+
+.feature_all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  height: 360vh;
+}
+
+.f1 {
+  height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+}
+
+.iphone13_1 {
+  width: 230px;
+  height: auto;
+}
+
+.red.feature1 {
+  width: 650px;
+  height: auto;
+}
+
+.footprints1 {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 480px;
+  height: 60vh;
+}
+
+.footprint1._1 {
+  position: absolute;
+  width: 40px;
+  top: 5%;
+  right:5%;
+}
+
+.footprint1._2 {
+  position: absolute;
+  width: 40px;
+  top: 30%;
+  right: 5%;
+}
+
+.footprint1._3 {
+  position: absolute;
+  width: 40px;
+  top: 40%;
+  right: 25%;
+}
+
+.footprint1._4 {
+  position: absolute;
+  width: 40px;
+  top: 65%;
+  right: 20%;
+}
+
+.footprint1._5 {
+  position: absolute;
+  width: 40px;
+  top: 70%;
+  left: 50%;
+}
+
+
+.footprint1._6 {
+  position: absolute;
+  width: 40px;
+  top: 95%;
+  right: 35%;
+}
+
+.f2 {
+  height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+}
+
+.red.feature2 {
+  width: 550px;
+  height: auto;
+}
+
+.iphone13_2 {
+  width: 220px;
+  height: auto;
+}
+
+.footprints2 {
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  width: 480px;
+  height: 60vh;
+}
+
+.footprints2 img {
+  position: absolute;
+}
+
+.footprint2._1 {
+  top: 25%;
+  left: 45%;
+}
+
+.footprint2._2 {
+  top: 48%;
+  left: 42%;
+}
+
+.footprint2._3 {
+  top: 50%;
+  left: 58%;
+}
+
+.footprint2._4 {
+  top: 65%;
+  left: 55%;
+}
+
+.footprint2._5 {
+  top: 75%;
+  left: 70%;
+}
+
+
+.footprint2._6 {
+  top: 90%;
+  left: 65%;
+}
+
+.f3 {
+  height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+}
+
+.red.feature3 {
+  width: 600px;
+  height: auto;
+}
+
+.iphone13_3 {
+  width: 220px;
+  height: auto;
+}
+
+.footprints3 {
+  position: absolute;
+  top:30%;
+  right: 0%;
+  width: 480px;
+  height: 60vh;
+}
+
+.footprints3 img {
+  position: absolute;
+}
+
+.footprint3._1 {
+  position: absolute;
+  width: 40px;
+  top: 15%;
+  right:45%;
+}
+
+.footprint3._2 {
+  position: absolute;
+  width: 40px;
+  top: 35%;
+  right: 40%;
+}
+
+.footprint3._3 {
+  position: absolute;
+  width: 40px;
+  top: 40%;
+  right: 55%;
+}
+
+.footprint3._4 {
+  position: absolute;
+  width: 40px;
+  top: 60%;
+  right: 45%;
+}
+
+.footprint3._5 {
+  position: absolute;
+  width: 40px;
+  top: 70%;
+  left: 30%;
+}
+
+
+.footprint3._6 {
+  position: absolute;
+  width: 40px;
+  top: 85%;
+  right: 55%;
+}
+
+
+.f4 {
+  height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+}
+
+.red.feature4 {
+  width: 580px;
+  height: auto;
+}
+
+
+.iphone13_4 {
+  width: 230px;
+  height: auto;
+}
+
+.footprints4 {
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  width: 480px;
+  height: 60vh;
+}
+
+.footprints4 img {
+  position: absolute;
+}
+
+.footprint4._1 {
+  top: 30%;
+  left: 45%;
+}
+
+.footprint4._2 {
+  top: 48%;
+  left: 42%;
+}
+
+.footprint4._3 {
+  top: 50%;
+  left: 58%;
+}
+
+.footprint4._4 {
+  top: 65%;
+  left: 55%;
+}
+
+.footprint4._5 {
+  top: 75%;
+  left: 70%;
+}
+
+
+.footprint4._6 {
+  top: 95%;
+  left: 65%;
+}
+
+    /* ここから */
+.fadeIn {
+    transition: 1s ease;
+    opacity: 0;
+}
+    
+.fadeIn.active {
+    opacity: 1;
+}
+/* (4)ここまで */
+
+
+
+/* (5)ここから */
+.section.install {
+  scroll-margin-top: var(--header-height);
+  width: 100%;
+  height: 85vh;
+  background-color: #fffdea;
+
+  position: relative;
+}
+
+.download {
+  width: 1200px;
+  height: auto;
+
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* (5)ここまで */
+
+
+/* (6)ここから */
+.footer {
+  scroll-margin-top: var(--header-height);
+  height: 75vh;
+  width: 100%;
+  background-color: #fffdea;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+/* (6)ここまで */
+
